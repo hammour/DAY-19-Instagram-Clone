@@ -2,20 +2,60 @@ body {
   background-color: #edeeef;
   font-family: 'proxima-nova', 'Helvetica Neue', Arial, Helvetica, sans-serif; }
 
+#crossToggle {
+  background-color: transparent;
+  border: none; }
+
 nav {
   background-color: #426a99;
   width: 100%;
   font-size: 3em;
   padding: .5em; }
 
-section {
+.postingImages {
   background-color: #e0e1e2;
   margin: auto 10%;
   height: auto; }
 
+#errorMessage {
+  color: red;
+  display: none; }
+
+.addingUrl {
+  background-color: #FFF;
+  display: none; }
+  .addingUrl .form_container {
+    overflow: hidden;
+    margin: auto 10%; }
+    .addingUrl .form_container button {
+      display: inline-block;
+      float: right;
+      margin: 2em 1em 2em auto;
+      padding: 1em; }
+    .addingUrl .form_container #addImageBtn {
+      background-color: #17aa56;
+      color: #fff; }
+    .addingUrl .form_container #cancelImageBtn {
+      background-color: #b6b6b6;
+      color: #fff; }
+    .addingUrl .form_container input {
+      margin: 4em auto 0.5em auto;
+      width: 100%;
+      border: solid #cfcfcf 2px;
+      height: 2em;
+      font-size: 1em;
+      padding: 1em;
+      font-spacing: 2em; }
+    .addingUrl .form_container textarea {
+      width: 100%;
+      margin: 0.5em auto 3em auto;
+      border: solid #cfcfcf 2px;
+      padding: 1em; }
+
 .item {
   box-shadow: 0px 0px 10px gray;
-  margin: auto 10% 2em 10%; }
+  margin: auto 10% 2em 10%;
+  padding: 2em auto; }
   .item img {
     width: 100%;
     box-sizing: inside; }
@@ -30,7 +70,7 @@ section {
   background-color: transparent; }
 
 @media (max-width: 425px) {
-  section {
+  .postingImages {
     margin: 0; } }
 
 /*# sourceMappingURL=main.css.map */
