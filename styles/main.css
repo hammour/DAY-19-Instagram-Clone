@@ -17,7 +17,7 @@ nav {
   margin: auto 10%;
   height: auto; }
 
-#errorMessage {
+#errMsg {
   color: red;
   display: none; }
 

@@ -1,10 +1,12 @@
 
 // toggling the input form 
+	
+	//to show...
 
 $('#crossToggle').on('click',function(){
 	$('.addingUrl').css('display','block');
 		});
-
+	// to hide...
 $('#cancelImageBtn').on('click',function(){
 	$('.addingUrl').css('display','none');
 		});
@@ -13,12 +15,9 @@ $('#cancelImageBtn').on('click',function(){
 
 var imageUrlEl=$('#imageUrl');
 var imageCaptionEl=$('#imageCaption');
-var hammoGramPhoto={
-	url: imageUrlEl.val(),
-	Caption: imageCaptionEl.val()
-}
 
 
+//getting the data from the server and displaying it on the page...
 
 
 var gettingData = {
@@ -28,9 +27,10 @@ var gettingData = {
 	success: function(data){
 		console.log(data);
 		console.log('ok');
+		//clearing the page...
 		$('.postingImages').html(' ')
 		data.forEach(function (val){
-			
+			//writting to HTML document
 			$('.postingImages').append(
 			
 				'<div class="empty"></div>'
@@ -48,9 +48,12 @@ var gettingData = {
 			
 
 			});
+		//toggling the input form...
 		$('.addingUrl').css('display','none');
+		//clearing the fields by reseting the value
 		$('#imageUrl').val('');
 		$('#imageCaption').val('');
+		$('#errMsg').css('display','none');
 	},
 
 	error: function(err){
@@ -71,10 +74,12 @@ var gettingData = {
 
 
 
-
+// getting input from the form and posting it...
 $('form').submit(function(e){
 		e.preventDefault();
+		// running check if the fields have valid strings or not
 		if (checkFields(imageUrlEl.val(),imageCaptionEl.val())){
+				//case true... Post and get the data, display it on the HTML page 
 				$.ajax({
 
 				
@@ -104,24 +109,28 @@ $('form').submit(function(e){
 
 
 				})
+			//getting data and display it... 
 			$.ajax(gettingData);
 
-		}
+			}
+		else{$('#errMsg').css('display','block');}
+		
 	});
 
 
 
-//checking fields for right input before adding an image 
+// the function that is checking fields for right input. 
 function checkFields(url,caption){
 	var urlLength= url.length;
 
 
 	if((!caption)||(!url)){
-		
+		//$('#errorMessage').css('display','block');
 		return false;
 
 	}
 	else if(url.substring(0,4)!=='http'){
+		//$('#errorMessage').css('display','block');
 		return false
 	}
 
@@ -136,14 +145,15 @@ function checkFields(url,caption){
 $.ajax(gettingData);
 
 
-// Adding more images using the input form 
 
 
 
 
 
 
-//displaying added images in the HTML page using append
+
+
+
 
 
 

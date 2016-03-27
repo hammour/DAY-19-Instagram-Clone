@@ -22,16 +22,17 @@ nav{
 	
 
 }
-#errorMessage{
+
+#errMsg{
 	color: red;
 	display:none;
 
-}
-
+		}
 .addingUrl{
 	background-color: #FFF;
 	//height: 20em;
 	display:none;
+	
 	.form_container{
 		overflow: hidden;
 		button{
